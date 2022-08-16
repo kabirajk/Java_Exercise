@@ -28,6 +28,7 @@ class Server {
 
         inp.start();
         outp.start();
+        inp.join();
         while(inp.isAlive() && outp.isAlive()){
         }
         if(inp.isAlive())
@@ -75,8 +76,8 @@ class inputThread implements Runnable {
         } catch (IOException e) {
             System.err.println("Exited");
         }
-        while(!t.isInterrupted())
-            t.interrupt();
+        // while(!t.isInterrupted())
+        //     t.interrupt();
 
     }
 }
@@ -111,6 +112,7 @@ class outputThread implements Runnable {
             }
             
         }
+        
         while(!t.isInterrupted())
             t.interrupt();
 

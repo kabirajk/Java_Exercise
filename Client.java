@@ -77,8 +77,8 @@ class inputThread implements Runnable {
         } catch (IOException e) {
             System.err.println("Exited");
         }
-        while(!t.isInterrupted())
-            t.interrupt();
+        // while(!t.isInterrupted())
+        //     t.interrupt();
 
 
     }
